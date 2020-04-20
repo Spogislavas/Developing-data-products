@@ -1,0 +1,37 @@
+---
+title: "Vehicle MPG Prediction Application"
+author: "Ignas"
+date: "20/04/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+This presentation and Shinny application was build for the course Developing Data Products.
+
+The Shiny app developed for this assignment is available at: <https://spogisignas.shinyapps.io/Final/>
+
+The source codes of ui.R and server.R are available on the GitHub:
+<https://github.com/Spogislavas/Developing-data-products>
+
+## Idea
+
+The idea of this application is to use previously constructed multivariable model in order to determine the MPG by selecting weight, transmission type and how fast vehicle reach 1/4 mile. 
+
+## Dataset {.smaller}
+For this application build, `mtcars` data set was used. Summary of the data set:
+```{r}
+summary(mtcars)
+```
+
+## Model
+
+Fitted model used in the application is: mpg as the outcome while am, wt and qsec as predictors. Coefficients are presented below.
+
+```{r}
+lm(mpg ~ am + wt + qsec, data = mtcars)
+```
